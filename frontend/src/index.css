@@ -1,0 +1,92 @@
+/* ============================================================
+   Smart Surveillance — Ultra Premium Dark Glassmorphism
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Dynamic Mesh Background Colors */
+  --mesh-1: #0f172a; /* Slate 900 */
+  --mesh-2: #1e1b4b; /* Indigo 950 */
+  --mesh-3: #171717; /* Neutral 900 */
+  
+  /* Glass Variables */
+  --glass-bg: rgba(30, 41, 59, 0.4);       /* Slate 800 at 40% */
+  --glass-bg-hover: rgba(30, 41, 59, 0.6);
+  --glass-bg-active: rgba(30, 41, 59, 0.7);
+  
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-highlight: rgba(255, 255, 255, 0.15);
+  
+  /* Elegant Accents */
+  --color-primary: #3b82f6;      /* Blue 500 */
+  --color-primary-hover: #60a5fa; /* Blue 400 */
+  --color-primary-glow: rgba(59, 130, 246, 0.4);
+  
+  --color-accent-amber: #fbbf24;
+  --color-accent-emerald: #10b981;
+  --color-accent-rose: #f43f5e;
+  --color-accent-purple: #8b5cf6;
+
+  /* Typography */
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #64748b;
+
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadows & Shapes */
+  --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--mesh-1);
+  background-image: 
+    radial-gradient(at 0% 0%, var(--mesh-2) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, var(--mesh-1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, var(--mesh-3) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, var(--mesh-1) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#root { min-height: 100vh; }
+
+a { color: var(--color-primary); text-decoration: none; transition: var(--transition-smooth); }
+a:hover { color: var(--color-primary-hover); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* Utility Classes */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass);
+}
+
+/* Elegant entry animation */
+@keyframes fadeBlurIn {
+  from { opacity: 0; filter: blur(10px); transform: translateY(15px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}

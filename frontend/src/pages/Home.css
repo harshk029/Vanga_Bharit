@@ -1,0 +1,93 @@
+.home-page {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+/* ── Top bar ── */
+.home-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: 72px;
+  background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky; top: 0; z-index: 20;
+}
+
+.home-brand {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: -0.01em;
+}
+.home-logo {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center; color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.home-logo svg { width: 18px; height: 18px; drop-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+
+.home-logout {
+  display: flex; align-items: center; gap: 8px; padding: 10px 20px;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md); font-family: var(--font-sans);
+  font-size: 0.9rem; font-weight: 600; color: #fff; cursor: pointer;
+  transition: all var(--transition-smooth); box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.home-logout:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-1px); }
+
+/* ── Hero ── */
+.home-hero { padding: 80px 40px 48px; text-align: center; max-width: 900px; margin: 0 auto; z-index: 10; position: relative; }
+.home-hero h1 {
+  font-size: 2.75rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 16px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.home-hero p { font-size: 1.15rem; font-weight: 400; color: var(--color-text-secondary); line-height: 1.6; }
+
+/* ── Grid ── */
+.home-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px;
+  padding: 0 40px 80px; max-width: 1200px; width: 100%; margin: 0 auto; z-index: 10; position: relative;
+}
+
+/* ── Card ── */
+.home-card {
+  display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+  gap: 16px; padding: 32px;
+  background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border); border-top: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-xl); box-shadow: var(--shadow-glass);
+  cursor: pointer; position: relative; transition: all var(--transition-smooth); overflow: hidden;
+}
+
+/* Subtle glow behind card to emulate glass caustics */
+.home-card::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.1), transparent 60%);
+  opacity: 0; transition: opacity var(--transition-smooth); border-radius: inherit; pointer-events: none;
+}
+.home-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.4); background: var(--glass-bg-hover); }
+.home-card:hover::after { opacity: 1; }
+
+.home-card-badge {
+  font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
+  padding: 4px 12px; border-radius: var(--radius-full);
+  letter-spacing: 0.05em; text-transform: uppercase;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.home-card-icon {
+  width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; border-radius: var(--radius-md); background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border); color: #fff; margin-top: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.home-card-title { font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.3; margin: 0; }
+.home-card-desc { font-size: 0.95rem; font-weight: 400; color: var(--color-text-secondary); line-height: 1.6; margin: 0; flex: 1; }
+
+.home-card-arrow {
+  display: flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.9rem; font-weight: 600;
+  color: var(--color-text-muted); margin-top: 12px; transition: all var(--transition-smooth);
+}
+.home-card:hover .home-card-arrow { gap: 14px; color: #fff; }
+
+@media (max-width: 600px) {
+  .home-hero h1 { font-size: 2.25rem; }
+  .home-grid { grid-template-columns: 1fr; padding: 0 24px 48px; }
+}

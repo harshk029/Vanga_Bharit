@@ -1,0 +1,15 @@
+# Ignore the massive virtual environment
+venv/
+.venv/
+env/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore any potential large models or data
+*.h5
+*.pth
+*.weights
+datasets/
+data/
