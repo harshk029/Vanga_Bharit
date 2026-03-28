@@ -1,0 +1,10 @@
+selenium
+webdriver-manager
+ultralytics
+git+https://github.com/ageitgey/face_recognition_models
+face_recognition
+fastapi
+uvicorn
+opencv-python
+jinja2
+python-multipart

@@ -1,0 +1,10 @@
+*.h5
+*.pth
+*.weights
+*.mp4
+*.avi
+*.zip
+*.onnx
+__pycache__/
+venv/
+.env
