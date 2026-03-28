@@ -109,7 +109,7 @@ app = FastAPI(title="GuardAI", lifespan=_lifespan)
 MODEL_WEIGHTS = 'yolo26n.pt'   # official YOLO26 nano weights (auto-downloaded on first run)
 
 # --- Twilio SMS Setup ---
-TWILIO_ACCOUNT_SID  = 'TOKEN'
+TWILIO_ACCOUNT_SID  = 'AC8f70a0a5026de7877c5dac612d53c774'
 TWILIO_AUTH_TOKEN   = 'f042ae5d38e57df48294f1b5a14e3b7f'
 TWILIO_MSG_SID      = 'MG9373b9b9af8e7a11e642aecae8bf99ff'
 TWILIO_TO_NUMBER    = '+917057055681'
@@ -1161,7 +1161,7 @@ def _mjpeg(buf_ref, lock):
 # ---------------------------------------------------------------------------
 # Routes
 # ---------------------------------------------------------------------------
-FRONTEND_DIR = Path(__file__).parent / "frontend" / "dist"
+FRONTEND_DIR = Path(__file__).parent / "dist"
 if FRONTEND_DIR.exists():
     _assets = FRONTEND_DIR / "assets"
     if _assets.exists():

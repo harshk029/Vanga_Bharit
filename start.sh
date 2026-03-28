@@ -58,9 +58,9 @@ echo -e "  Web UI:  ${GREEN}http://0.0.0.0:$FASTAPI_PORT/${NC}"
 echo ""
 
 # --- 1. Build React frontend if needed ---
-if [ -d "$SCRIPT_DIR/frontend" ] && [ ! -d "$SCRIPT_DIR/frontend/dist" ]; then
+if [ ! -d "$SCRIPT_DIR/dist" ]; then
     echo -e "${YELLOW}[LAUNCHER] Building React frontend...${NC}"
-    (cd "$SCRIPT_DIR/frontend" && npm run build)
+    npm run build
     echo -e "${GREEN}[LAUNCHER] Frontend built.${NC}"
 fi
 
